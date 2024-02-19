@@ -71,6 +71,9 @@ sat_income_df <- sat_income_df %>%
          Income_Asian_Ratio_Above1 = ifelse(Income_Asian_Ratio > 1, "Yes", "No"), 
          Income_American.Indian.And.Alaska.Native_Ratio_Above1 = ifelse(Income_American.Indian.And.Alaska.Native_Ratio > 1, "Yes", "No"))
 
+# export unified and cleaned "sat_income_df" as CSV file
+write.csv(sat_income_df, "sat_income_df.csv", row.names = FALSE)
+
 # creating a summarization dataframe of max and min of sat_score and max and min of income among all races
 min_and_max_df <- sat_income_df %>% 
   group_by(Year) %>% 
