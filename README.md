@@ -1,4 +1,4 @@
-# Title of Your Final Project Here 
+# Impact of Income on the Perceived Racial Disparity in Education
 ## INFO 201 "Foundational Skills for Data Science"
 
 Authors: Fenting Jin, Ayesha Khan, Riya Prasad, Adya Sengupta
