@@ -1,6 +1,9 @@
-# load dplyr
+# load packages
 library(dplyr)
 library(stringr)
+library(shiny)
+library(ggplot2)
+library(plotly)
 
 # load data sets
 sat_by_race <- read.csv("SAT_mean.csv")
@@ -82,3 +85,45 @@ min_and_max_df <- sat_income_df %>%
             Max_Income = max(c(Income_White..non.Hispanic, Income_Black, Income_Hispanic..any.race., Income_Asian, Income_American.Indian.and.Alaska.Native)),
             Min_Income = min(c(Income_White..non.Hispanic, Income_Black, Income_Hispanic..any.race., Income_Asian, Income_American.Indian.and.Alaska.Native)))
 
+
+# line_graph_3: y = SAT_ratio, Income_ratio, x = Year, fill = Race 
+ratio_df <- sat_income_df %>% 
+  select(c(Year, SAT_Black_Ratio, SAT_White_Ratio, SAT_Hispanic_Ratio,
+           SAT_Asian_Ratio, SAT_American.Indian.And.Alaska.Native_Ratio,
+           Income_Black_Ratio, Income_White_Ratio, Income_Hispanic_Ratio,
+           Income_Asian_Ratio, Income_American.Indian.And.Alaska.Native_Ratio))
+
+ggplot(data = ratio_df) +
+  geom_line(mapping = aes(x = Year,
+                          y = SAT_Black_Ratio, 
+                          color = "Black")) +
+  geom_line(mapping = aes(x = Year,
+                          y = SAT_White_Ratio, 
+                          color = "White")) +
+  geom_line(mapping = aes(x = Year,
+                          y = SAT_Hispanic_Ratio, 
+                          color = "Hispanic")) +
+  geom_line(mapping = aes(x = Year,
+                          y = SAT_Asian_Ratio, 
+                          color = "Asian")) +
+  geom_line(mapping = aes(x = Year,
+                          y = SAT_American.Indian.And.Alaska.Native_Ratio, 
+                          color = "American.Indian.And.Alaska.Native")) +
+  geom_line(mapping = aes(x = Year,
+                          y = Income_Black_Ratio, 
+                          color = "Black")) +
+  geom_line(mapping = aes(x = Year,
+                          y = Income_White_Ratio, 
+                          color = "White")) +
+  geom_line(mapping = aes(x = Year,
+                          y = Income_Hispanic_Ratio, 
+                          color = "Hispanic")) +
+  geom_line(mapping = aes(x = Year,
+                          y = Income_Asian_Ratio, 
+                          color = "Asian")) +
+  geom_line(mapping = aes(x = Year,
+                          y = Income_American.Indian.And.Alaska.Native_Ratio, 
+                          color = "American.Indian.And.Alaska.Native")) +
+  labs(title = "SAT and Income Ratio",
+       x = "Year",
+       y = "Ratio")
