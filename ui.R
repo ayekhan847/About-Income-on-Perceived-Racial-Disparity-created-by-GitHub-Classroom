@@ -1,0 +1,96 @@
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(shiny)
+library(ggplot2)
+library(plotly)
+
+sat_by_race <- read.csv("sat_by_race.csv")
+sat_income_df <- read.csv("sat_income_df.csv")
+ratio_df <- read.csv("ratio_df.csv")
+
+## OVERVIEW TAB INFO
+
+overview_tab <- tabPanel("Background",
+   h1("Background"),
+   p("some explanation")
+)
+
+## Mean SAT Score based on Year and Race TAB INFO
+
+viz_1_sidebar <- sidebarPanel(
+  h2("Options for graph"),
+  #TODO: Put inputs for modifying graph here
+)
+
+viz_1_main_panel <- mainPanel(
+  h2("Mean SAT Score based on Year and Race"),
+  # plotlyOutput(outputId = "your_viz_1_output_id")
+)
+
+viz_1_tab <- tabPanel("SAT Score",
+  sidebarLayout(
+    viz_1_sidebar,
+    viz_1_main_panel
+  )
+)
+
+## Median Household Incomes based on Year and Race TAB INFO
+
+viz_2_sidebar <- sidebarPanel(
+  h2("Options for graph"),
+  #TODO: Put inputs for modifying graph here
+)
+
+viz_2_main_panel <- mainPanel(
+  h2("Median Household Incomes based on Year and Race"),
+  # plotlyOutput(outputId = "your_viz_1_output_id")
+)
+
+viz_2_tab <- tabPanel("Household Incomes",
+  sidebarLayout(
+    viz_2_sidebar,
+    viz_2_main_panel
+  )
+)
+
+## Ratio
+# get column names from ratio_df
+ratio_colnames = colnames(ratio_df)
+
+viz_3_sidebar <- sidebarPanel(
+  h2("Select Race with either SAT or Income Ratio to See the Trend"),
+  selectInput(inputId = "selected_race",
+                label = "Select Race in pair (eg. SAT_Black_Ratio, Income_Black_Ratio)",
+                choices = ratio_colnames[2:11], 
+                selected = "SAT_Black_Ratio", 
+                multiple = TRUE)
+)
+
+viz_3_main_panel <- mainPanel(
+  plotlyOutput(outputId = "ratio_plot")
+)
+
+viz_3_tab <- tabPanel("SAT and Income Ratio over Years",
+  sidebarLayout(
+    viz_3_sidebar,
+    viz_3_main_panel
+  )
+)
+
+## CONCLUSIONS TAB INFO
+
+conclusion_tab <- tabPanel("Conclusion Tab Title",
+ h1("Some title"),
+ p("some conclusions")
+)
+
+## Overall UI Navbar
+
+ui <- navbarPage("Impact of Income on the Perceived Racial Disparity in Education",
+  overview_tab,
+  viz_1_tab,
+  viz_2_tab,
+  viz_3_tab,
+  conclusion_tab
+)

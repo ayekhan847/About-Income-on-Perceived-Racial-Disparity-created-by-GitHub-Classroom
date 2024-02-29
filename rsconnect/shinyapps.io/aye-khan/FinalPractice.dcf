@@ -1,0 +1,12 @@
+name: FinalPractice
+title: FinalPractice
+username: aye-khan
+account: aye-khan
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 11350833
+bundleId: 8306127
+url: https://aye-khan.shinyapps.io/FinalPractice/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
