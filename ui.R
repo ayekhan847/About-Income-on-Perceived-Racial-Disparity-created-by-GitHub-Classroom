@@ -76,7 +76,8 @@ viz_3_sidebar <- sidebarPanel(
 )
 
 viz_3_main_panel <- mainPanel(
-  plotlyOutput(outputId = "ratio_plot")
+  h2("SAT and Income Ratio over Years among Races"),
+  plotlyOutput(outputId = "ratio_plot", width = "95%", height = "600px")
 )
 
 viz_3_tab <- tabPanel("SAT and Income Ratio over Years",
