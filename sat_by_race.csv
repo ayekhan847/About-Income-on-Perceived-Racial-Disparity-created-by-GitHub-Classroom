@@ -1,4 +1,4 @@
-"SAT_Year","SAT_All.races","SAT_White","SAT_Black","SAT_Hispanic","SAT_Asian","SAT_Pacific.Islander","SAT_X..American.Indian.or.Alaska.Native.","SAT_Two.or.more.races","SAT_No.response"
+SAT_Year,All_Races,White,Black,Hispanic,Asian,Pacific_Islander,American_Indian_or_Alaska_Native,Mixed Race,No_Response
 2017,1060,1118,941,990,1181,986,963,1103,961
 2018,1068,1123,946,990,1223,986,949,1101,954
 2019,1059,1114,933,978,1223,964,912,1095,959

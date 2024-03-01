@@ -19,6 +19,13 @@ ratio_long <- ratio_df %>%
 
 length(ratio_long$Race)
 
+#For graph 1
+SAT_colnames = colnames(sat_by_race)
+sat_long <- sat_by_race %>% 
+         select(all_of(SAT_colnames)) %>% 
+         gather(key = "Race", value = "SAT_Score", -SAT_Year)
+
+
 server <- function(input, output){
   selected_race_data <- reactive({
     ratio_long %>%
@@ -36,4 +43,28 @@ server <- function(input, output){
     
     return(ggplotly(sat_income_plot))
   })
+  
+  
+  selected_SAT_data <- reactive({
+    sat_long %>%
+      filter(Race %in% input$race_to_display)
+  })
+  
+  output$SAT_plot <- renderPlotly({
+    
+    SAT_score_plot <- ggplot(selected_SAT_data()) +
+      geom_boxplot(mapping = aes(x = Race, 
+                                 y = SAT_Score,
+                                 fill = Race))+
+      scale_x_discrete(labels = c(
+        "All Races", "Asian", "Black", "Hispanic", "No Response", 
+        "Pacific Islander", "Mixed Race", "White", "American Indian or Alaska Native"
+      )) +
+      theme(axis.text.x = element_text(angle = 90, vjust = 0.5)) +
+      labs(x = 'Race/Ethnicity', y = 'SAT Score', title = 'SAT Scores by Race/Ethnicity Across Years')
+    
+    return(ggplotly(SAT_score_plot))
+    
+  })
 }
+

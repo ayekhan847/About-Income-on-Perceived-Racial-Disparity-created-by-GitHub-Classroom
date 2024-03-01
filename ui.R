@@ -17,18 +17,26 @@ overview_tab <- tabPanel("Background",
 )
 
 ## Mean SAT Score based on Year and Race TAB INFO
+#Getting column names:
+SAT_colnames <- colnames(sat_by_race)
 
 viz_1_sidebar <- sidebarPanel(
-  h2("Options for graph"),
-  #TODO: Put inputs for modifying graph here
+  h2("Select Race to Display"),
+  selectInput(
+    inputId = "race_to_display",
+    label = "Choose Race to Display",
+    choices = SAT_colnames[2:10],
+    selected = "All_Races",
+    multiple = TRUE
+  )
 )
 
 viz_1_main_panel <- mainPanel(
-  h2("Mean SAT Score based on Year and Race"),
-  # plotlyOutput(outputId = "your_viz_1_output_id")
+  h2("SAT Score Distribution Based on Year and Race"),
+  plotlyOutput(outputId = "SAT_plot", width = "95%", height = "600px")
 )
 
-viz_1_tab <- tabPanel("SAT Score",
+viz_1_tab <- tabPanel("SAT Scores",
   sidebarLayout(
     viz_1_sidebar,
     viz_1_main_panel

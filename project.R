@@ -131,14 +131,7 @@ ggplot(data = ratio_df) +
 #Line Graph 2 for graphing sat score to race
 library(tidyr)
 library(ggplot2)
-# Reshaping the data
-sat_long <- pivot_longer(sat_by_race, 
-                         cols = -SAT_Year, 
-                         names_to = "Race", 
-                         values_to = "SAT_Score")
 
-# Create the box and whisker plot
-maternity_plot <- # Load the necessary libraries
 
 # Reshape the data to long format with pivot_longer
 sat_long <- pivot_longer(sat_by_race, 
@@ -147,7 +140,7 @@ sat_long <- pivot_longer(sat_by_race,
                          values_to = "SAT_Score")
 
 # Create the box and whisker plot with custom labels and vertical orientation
-maternity_plot <- ggplot(sat_long, aes(x = Race, y = SAT_Score)) +
+SAT_plot <- ggplot(sat_long, aes(x = Race, y = SAT_Score)) +
   geom_boxplot() +
   scale_x_discrete(labels = c(
   "All Races", "Asian", "Black", "Hispanic", "No Response", 
@@ -156,5 +149,5 @@ maternity_plot <- ggplot(sat_long, aes(x = Race, y = SAT_Score)) +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5)) +
   labs(x = 'Race/Ethnicity', y = 'SAT Score', title = 'SAT Scores by Race/Ethnicity Across Years')
 
-ggplotly(maternity_plot)
+ggplotly(SAT_plot)
 
