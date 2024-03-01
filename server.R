@@ -27,6 +27,7 @@ sat_long <- sat_by_race %>%
 
 
 server <- function(input, output){
+  #Graph 3 Code
   selected_race_data <- reactive({
     ratio_long %>%
       filter(Race %in% input$selected_race)
@@ -44,7 +45,7 @@ server <- function(input, output){
     return(ggplotly(sat_income_plot))
   })
   
-  
+  #Graph 1 Code
   selected_SAT_data <- reactive({
     sat_long %>%
       filter(Race %in% input$race_to_display)
@@ -56,10 +57,6 @@ server <- function(input, output){
       geom_boxplot(mapping = aes(x = Race, 
                                  y = SAT_Score,
                                  fill = Race))+
-      scale_x_discrete(labels = c(
-        "All Races", "Asian", "Black", "Hispanic", "No Response", 
-        "Pacific Islander", "Mixed Race", "White", "American Indian or Alaska Native"
-      )) +
       theme(axis.text.x = element_text(angle = 90, vjust = 0.5)) +
       labs(x = 'Race/Ethnicity', y = 'SAT Score', title = 'SAT Scores by Race/Ethnicity Across Years')
     
