@@ -8,6 +8,7 @@ library(plotly)
 sat_by_race <- read.csv("sat_by_race.csv")
 sat_income_df <- read.csv("sat_income_df.csv")
 ratio_df <- read.csv("ratio_df.csv")
+income_by_race <- read.csv("Median_household_income.csv")
 
 ## OVERVIEW TAB INFO
 
@@ -19,6 +20,7 @@ overview_tab <- tabPanel("Background",
 ## Mean SAT Score based on Year and Race TAB INFO
 #Getting column names:
 SAT_colnames <- colnames(sat_by_race)
+
 
 viz_1_sidebar <- sidebarPanel(
   h2("Select Race to Display"),
@@ -46,13 +48,21 @@ viz_1_tab <- tabPanel("SAT Scores",
 ## Median Household Incomes based on Year and Race TAB INFO
 
 viz_2_sidebar <- sidebarPanel(
-  h2("Options for graph"),
+  h2("Select Year to Display"),
   #TODO: Put inputs for modifying graph here
+  
+  selectInput(
+    inputId = "year_to_display",
+    label = "Choose Year to Display",
+    choices = income_by_race$Year,
+    selected = "2017",
+  )
+  
 )
 
 viz_2_main_panel <- mainPanel(
   h2("Median Household Incomes based on Year and Race"),
-  # plotlyOutput(outputId = "your_viz_1_output_id")
+  plotlyOutput(outputId = "income_plot", width = "95%", height = "600px")
 )
 
 viz_2_tab <- tabPanel("Household Incomes",
