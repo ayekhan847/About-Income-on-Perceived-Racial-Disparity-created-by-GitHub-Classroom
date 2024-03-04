@@ -12,8 +12,8 @@ income_by_race <- read.csv("Median_household_income.csv")
 
 ## OVERVIEW TAB INFO
 
-overview_tab <- tabPanel("Background",
-   h1("Background"),
+overview_tab <- tabPanel("Introduction",
+   h1("Introduction"),
    p("some explanation")
 )
 
