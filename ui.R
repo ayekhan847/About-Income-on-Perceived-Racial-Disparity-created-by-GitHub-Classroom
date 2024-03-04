@@ -35,7 +35,7 @@ viz_1_sidebar <- sidebarPanel(
 
 viz_1_main_panel <- mainPanel(
   h2("SAT Score Distribution Based on Year and Race"),
-  plotlyOutput(outputId = "SAT_plot", width = "95%", height = "600px")
+  plotlyOutput(outputId = "SAT_plot", width = "95%", height = "900px")
 )
 
 viz_1_tab <- tabPanel("SAT Scores",
@@ -49,14 +49,11 @@ viz_1_tab <- tabPanel("SAT Scores",
 
 viz_2_sidebar <- sidebarPanel(
   h2("Select Year to Display"),
-  #TODO: Put inputs for modifying graph here
-  
-  
- selectInput(
+  selectInput(
     inputId = "year_to_display",
     label = "Choose Year to Display",
     choices = income_by_race$Year,
-    selected = "2017",
+    selected = "2017"
   )
   
 )
@@ -78,20 +75,20 @@ viz_2_tab <- tabPanel("Household Incomes",
 ratio_colnames = colnames(ratio_df)
 
 viz_3_sidebar <- sidebarPanel(
-  h2("Select Race with either SAT or Income Ratio to See the Trend"),
+  h2("Select Race with SAT and Income Ratio in Pair to See the Trend"),
   selectInput(inputId = "selected_race",
-                label = "Select Race in pair (eg. SAT_Black_Ratio, Income_Black_Ratio)",
+                label = "Select Race in Pair (eg. SAT_Black_Ratio, Income_Black_Ratio)",
                 choices = ratio_colnames[2:11], 
                 selected = "SAT_Black_Ratio", 
                 multiple = TRUE)
 )
 
 viz_3_main_panel <- mainPanel(
-  h2("SAT and Income Ratio over Years among Races"),
+  h2("SAT Score and Household Income Ratios based on Year and Race"),
   plotlyOutput(outputId = "ratio_plot", width = "95%", height = "600px")
 )
 
-viz_3_tab <- tabPanel("SAT and Income Ratio over Years",
+viz_3_tab <- tabPanel("Correlation between SAT Scores and Household Incomes",
   sidebarLayout(
     viz_3_sidebar,
     viz_3_main_panel
@@ -100,7 +97,7 @@ viz_3_tab <- tabPanel("SAT and Income Ratio over Years",
 
 ## CONCLUSIONS TAB INFO
 
-conclusion_tab <- tabPanel("Conclusion Tab Title",
+conclusion_tab <- tabPanel("Conclusion",
  h1("Some title"),
  p("some conclusions")
 )
