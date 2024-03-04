@@ -51,7 +51,8 @@ viz_2_sidebar <- sidebarPanel(
   h2("Select Year to Display"),
   #TODO: Put inputs for modifying graph here
   
-  selectInput(
+  
+ selectInput(
     inputId = "year_to_display",
     label = "Choose Year to Display",
     choices = income_by_race$Year,
@@ -62,7 +63,7 @@ viz_2_sidebar <- sidebarPanel(
 
 viz_2_main_panel <- mainPanel(
   h2("Median Household Incomes based on Year and Race"),
-  plotlyOutput(outputId = "income_plot", width = "95%", height = "600px")
+  plotlyOutput(outputId = "income_plot", width = "95%", height = "900px")
 )
 
 viz_2_tab <- tabPanel("Household Incomes",

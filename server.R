@@ -27,13 +27,6 @@ sat_long <- sat_by_race %>%
          gather(key = "Race", value = "SAT_Score", -SAT_Year)
 
 
-#For graph 2 
-income_colnames <- colnames(income_by_race)
-income_long <- income_by_race %>%
-  select(all_of(income_colnames)) %>%
-  gather(key = "Race", value = "Median_Income", -Year)
-
-
 server <- function(input, output){
   #Graph 3 Code
   selected_race_data <- reactive({
@@ -74,18 +67,27 @@ server <- function(input, output){
   
   
   #Graph 2 code 
+  
+  #For graph 2 
+  income_colnames <- colnames(income_by_race)
+  income_long <- income_by_race %>%
+    select(all_of(income_colnames)) %>%
+    gather(key = "Race", value = "Median_Income", -Year)
+  
+  
   selected_year_data <- reactive({
     income_long %>%
       filter(Year %in% input$year_to_display)
   })
+
   
   output$income_plot <- renderPlotly({
     
    income_plot <- ggplot(selected_year_data()) + 
      geom_col(mapping = aes(
       x = Race, 
-      y = Median_Income,
-      fill = Year)) +
+      y = Median_Income, 
+      fill = Race)) +
       theme(axis.text.x = element_text(angle = 90, vjust = 0.5)) +
       labs(x = 'Race/Ethnicity', y = 'Income' , title = 'Median HouseHold Income by Race Across Years')
      
