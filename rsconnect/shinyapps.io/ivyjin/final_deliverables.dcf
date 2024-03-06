@@ -1,0 +1,12 @@
+name: final_deliverables
+title: final_deliverables
+username: ivyjin
+account: ivyjin
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 11421431
+bundleId: 8341013
+url: https://ivyjin.shinyapps.io/final_deliverables/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

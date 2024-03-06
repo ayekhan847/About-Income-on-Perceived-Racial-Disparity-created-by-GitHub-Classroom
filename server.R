@@ -94,5 +94,12 @@ server <- function(input, output){
     return(ggplotly(sat_income_plot))
   })
   
+  output$intro_image <- renderImage({
+    list(src = "image_201.jpg",
+         contentType = "image/jpg",
+         width = 600,
+         height = 400,
+         align = "left")
+  }, deleteFile = FALSE)
 }
 
