@@ -35,9 +35,16 @@ overview_tab <- tabPanel("Introduction",
       https://reports.collegeboard.org/media/2022-04/2021-total-group-sat-suite-of-assessments-annual-report%20(1).pdf (2021)
       https://reports.collegeboard.org/media/pdf/2022-total-group-sat-suite-of-assessments-annual-report.pdf (2022)",
      style = "font-size: 14px;"),
-   p("The dataset of mean SAT scores by race is generated from CollegeBoard’s SAT Suite of Assessment Annual Report from 2017 to 2022. It is a national dataset in the United States. Based on self-reported information test takers filled in during the SAT assessment, CollegeBoard was able to collect the data about their backgrounds and connect it with their SAT scores. Mean score, as explained by CollegeBoard, “is the arithmetic average of a defined set of test scores,” and will be calculated only if there are more than ten students in a group. Based on the annual reports from 2017 to 2022, we generated an Excel sheet by extracting the mean SAT total score (Total), mean evidence-based reading and writing score (ERW), and mean math score (Math) by 8 categories of races (American Indian/Alaska Native, Asian, Black/African American, Hispanic/Latino, Native Hawaiian/Other Pacific Islander, White, Two or More Races, No Response) and All Races where we took the mean scores of all test takers in total.",
+   p("The dataset of mean SAT scores by race is generated from CollegeBoard’s SAT Suite of Assessment Annual Report from 2017 to 2022. It is a national dataset in the United States. Based on self-reported information test takers filled in during the SAT assessment, CollegeBoard was able to collect the data about their backgrounds and connect it with their SAT scores. Mean score, as explained by CollegeBoard, “is the arithmetic average of a defined set of test scores,” and will be calculated only if there are more than ten students in a group. Based on the annual reports from 2017 to 2022, we generated an Excel sheet by extracting the mean SAT total score (Total) by 8 categories of races (American Indian/Alaska Native, Asian, Black/African American, Hispanic/Latino, Native Hawaiian/Other Pacific Islander, White, Two or More Races, No Response) and All Races where we took the mean scores of all test takers in total.",
      style = "font-size: 18px;"),
-   imageOutput("intro_image")
+   fluidRow(
+     column(6,
+            imageOutput("intro_image_2")
+     ),
+     column(6,
+            imageOutput("intro_image_1")
+     )
+   )
 )
 
 ## Mean SAT Score based on Year and Race TAB INFO
@@ -64,7 +71,7 @@ viz_1_sidebar <- sidebarPanel(
 
 viz_1_main_panel <- mainPanel(
   h2("SAT Score Distribution Based on Year and Race"),
-  plotlyOutput(outputId = "SAT_plot", width = "95%", height = "900px")
+  plotlyOutput(outputId = "SAT_plot", width = "95%", height = "800px")
 )
 
 viz_1_tab <- tabPanel("SAT Scores",

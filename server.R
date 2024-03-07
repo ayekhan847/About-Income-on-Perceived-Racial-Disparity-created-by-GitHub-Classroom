@@ -94,11 +94,20 @@ server <- function(input, output){
     return(ggplotly(sat_income_plot))
   })
   
-  output$intro_image <- renderImage({
-    list(src = "image_201.jpg",
+  output$intro_image_1 <- renderImage({
+    list(src = "image_201_1.jpg",
          contentType = "image/jpg",
          width = 600,
-         height = 400)
+         height = 440,
+         align = "left")
+  }, deleteFile = FALSE)
+  
+  output$intro_image_2 <- renderImage({
+    list(src = "image_201_2.jpg",
+         contentType = "image/jpg",
+         width = 600,
+         height = 450,
+         align = "left")
   }, deleteFile = FALSE)
 }
 
