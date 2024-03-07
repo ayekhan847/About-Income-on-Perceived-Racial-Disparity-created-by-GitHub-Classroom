@@ -13,19 +13,21 @@ income_by_race <- read.csv("Median_household_income.csv")
 ## OVERVIEW TAB INFO
 
 overview_tab <- tabPanel("Introduction",
-   h1(""),
-   p("In this project, we will use data from CollegeBoard’s SAT Suite of Assessment Annual Report and Current Population Reports published by U.S. Census Bureau from year 2017 to 2022.",
-     style = "font-size: 16px;"),
-   imageOutput("intro_image"),
-   p("Data Sources",
-     style = "font-size: 16px; font-weight: bold;"),
+   p("Introduction",
+      style = "font-size: 24px; font-weight: bold;"),
+   p("In the following analysis, we dive into the intricate dynamic between income and educational outcomes across racial lines. Our examination illuminates two fundamental questions: We investigate the relationship between racial identities and academic performance, utilizing the lens of SAT scores. We then, using average household income, explore the profound impact of economic disparities on access to educational resources and opportunities among different racial groups. The crossroads between these datasets reveals the systemic inequalities deeply rooted within society and their factor in the perceived racial disparity in education.",
+      style = "font-size: 18px;"),
+   p("Information Regarding Data Used",
+     style = "font-size: 24px; font-weight: bold;"),
    p("Median Household Income by Race (2017-2022):",
-     style = "font-size: 14px;"),
+     style = "font-size: 18px; font-weight: bold;"),
    p("https://www.statista.com/statistics/1086359/median-household-income-race-us/ (website)
      https://www.census.gov/content/dam/Census/library/publications/2022/demo/p60-276.pdf (source)",
      style = "font-size: 14px;"),
+   p("The dataset of median house income by race and ethnicity is downloaded from Statista, a platform with an extensive collection of statistics and reports. It is also a national dataset in the United States. The website provided us with the median household income in the United States, by race and ethnicity from 1967 to 2022 based on sources from the US Census Bureau, in particular, the Income in the United States: 2021- Current Population Reports published by the US Census Bureau. The US Census Bureau collected the data based on the Current Population Survey (CPS) and the Annual Social and Economic Supplements (ASEC).",
+     style = "font-size: 18px;"),
    p("Mean SAT Scores by Race (2017-2022):",
-     style = "font-size: 14px;"),
+     style = "font-size: 18px; font-weight: bold;"),
    p("https://reports.collegeboard.org/media/pdf/2017-total-group-sat-suite-assessments-annual-report.pdf (2017)
       https://reports.collegeboard.org/media/pdf/2018-total-group-sat-suite-assessments-annual-report.pdf (2018)
       https://reports.collegeboard.org/media/pdf/2019-total-group-sat-suite-assessments-annual-report.pdf (2019)
@@ -33,6 +35,9 @@ overview_tab <- tabPanel("Introduction",
       https://reports.collegeboard.org/media/2022-04/2021-total-group-sat-suite-of-assessments-annual-report%20(1).pdf (2021)
       https://reports.collegeboard.org/media/pdf/2022-total-group-sat-suite-of-assessments-annual-report.pdf (2022)",
      style = "font-size: 14px;"),
+   p("The dataset of mean SAT scores by race is generated from CollegeBoard’s SAT Suite of Assessment Annual Report from 2017 to 2022. It is a national dataset in the United States. Based on self-reported information test takers filled in during the SAT assessment, CollegeBoard was able to collect the data about their backgrounds and connect it with their SAT scores. Mean score, as explained by CollegeBoard, “is the arithmetic average of a defined set of test scores,” and will be calculated only if there are more than ten students in a group. Based on the annual reports from 2017 to 2022, we generated an Excel sheet by extracting the mean SAT total score (Total), mean evidence-based reading and writing score (ERW), and mean math score (Math) by 8 categories of races (American Indian/Alaska Native, Asian, Black/African American, Hispanic/Latino, Native Hawaiian/Other Pacific Islander, White, Two or More Races, No Response) and All Races where we took the mean scores of all test takers in total.",
+     style = "font-size: 18px;"),
+   imageOutput("intro_image")
 )
 
 ## Mean SAT Score based on Year and Race TAB INFO

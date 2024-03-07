@@ -98,8 +98,7 @@ server <- function(input, output){
     list(src = "image_201.jpg",
          contentType = "image/jpg",
          width = 600,
-         height = 400,
-         align = "left")
+         height = 400)
   }, deleteFile = FALSE)
 }
 
