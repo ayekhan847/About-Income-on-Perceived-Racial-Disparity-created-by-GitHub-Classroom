@@ -10,7 +10,7 @@ In the following analysis, we dive into the intricate dynamic between income and
 
 # Information Regarding Data Used
 
-**Mean SAT Scores by Race (2017-2022)
+**Mean SAT Scores by Race (2017-2022)**
 https://reports.collegeboard.org/media/pdf/2017-total-group-sat-suite-assessments-annual-report.pdf (2017)
 https://reports.collegeboard.org/media/pdf/2018-total-group-sat-suite-assessments-annual-report.pdf (2018)
 https://reports.collegeboard.org/media/pdf/2019-total-group-sat-suite-assessments-annual-report.pdf (2019)
@@ -20,7 +20,7 @@ https://reports.collegeboard.org/media/pdf/2022-total-group-sat-suite-of-assessm
 
 The dataset of mean SAT scores by race is generated from CollegeBoard’s SAT Suite of Assessment Annual Report from 2017 to 2022. It is a national dataset in the United States. Based on self-reported information test takers filled in during the SAT assessment, CollegeBoard was able to collect the data about their backgrounds and connect it with their SAT scores. Mean score, as explained by CollegeBoard, “is the arithmetic average of a defined set of test scores,” and will be calculated only if there are more than ten students in a group. Based on the annual reports from 2017 to 2022, we generated an Excel sheet by extracting the mean SAT total score (Total), mean evidence-based reading and writing score (ERW), and mean math score (Math) by 8 categories of races (American Indian/Alaska Native, Asian, Black/African American, Hispanic/Latino, Native Hawaiian/Other Pacific Islander, White, Two or More Races, No Response) and All Races where we took the mean scores of all test takers in total.
 
-**Median Household Income by Race (2017-2022)
+**Median Household Income by Race (2017-2022)**
 https://www.statista.com/statistics/1086359/median-household-income-race-us/ (website)
 https://www.census.gov/content/dam/Census/library/publications/2022/demo/p60-276.pdf (source)
 
