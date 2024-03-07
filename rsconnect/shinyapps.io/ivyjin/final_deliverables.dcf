@@ -5,7 +5,7 @@ account: ivyjin
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 11421431
-bundleId: 8342959
+bundleId: 8343113
 url: https://ivyjin.shinyapps.io/final_deliverables/
 version: 1
 asMultiple: FALSE

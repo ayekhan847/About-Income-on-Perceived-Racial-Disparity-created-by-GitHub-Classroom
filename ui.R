@@ -141,15 +141,16 @@ viz_3_tab <- tabPanel("Correlation between SAT Scores and Household Incomes",
 ## CONCLUSIONS TAB INFO
 
 conclusion_tab <- tabPanel("Conclusion",
- h1("Conclusion"),
+ p("Conclusion",
+    style = "font-size: 24px; font-weight: bold;"),
  p("Our first takeaway underscores the profound impact of economic disparities on educational opportunities across racial lines. Highlighting the stark differences in average yearly income among racial groups, the analysis unveils systemic inequalities entrenched within society. These disparities not only reflect broader economic divides but also directly influence access to educational resources and opportunities. The intersectionality of race and class further complicates the landscape, with policy interventions needed to address the root causes of educational inequality. Cultural attitudes, societal perceptions, and long-term implications underscore the urgency of promoting economic equity to foster greater educational access, social mobility, and societal well-being for all students, irrespective of their racial or socioeconomic backgrounds.", 
-   style = "font-size: 20px;"),
+   style = "font-size: 18px;"),
  p("The second takeaway we derive from our analysis of the SAT score box-plot graph highlights the intricate interplay between racial/ethnic groups and academic performance. Notably, we observe a discernible variation in scores across different racial categories, shedding light on systemic disparities within our educational system. The distribution of scores reveals that the 'Asian, White, and Mixed Race' groups exert a significant influence, with median SAT ranges of 1223, 1113, and 1101 respectively, surpassing the median score for 'All Races' at 1059. This data suggests that students from these racial categories tend to perform above the average. By scrutinizing their backgrounds, we can initiate a nuanced exploration into the socioeconomic factors that confer advantages to certain student populations. This analysis enriches our understanding of the complexities shaping educational outcomes and emphasizes the systemic inequalities in our education system.",
-   style = "font-size: 20px;"),
+   style = "font-size: 18px;"),
  p("Our third takeaway is that lower academic performance is most likely a result of lesser access to resources and opportunity, rather than a genetic disposition or correlation with race. Critical considerations to address are that income and education are likely to have a cyclic correlation – lower wages leads to less educational opportunity, leading back to lower wages. This cyclic relationship is depicted as most of the 10 lines can be described as roughly plateau. Identifying a cyclic correlation between income and education is vital to bridging the presented gap. It alerts us that to address this issue we must start by increasing access to education and resources in poor areas. Additionally public schools in such areas must be allocated resources, and provided better government funding to help end the cycle of race or community-based poverty. When we strip away the false narrative of certain races being “naturally” more proficient or capable, we are able to open our eyes to the reality of the situation and the “trap” like nature of poverty masked by complex racist theory.",
-   style = "font-size: 20px;"),
+   style = "font-size: 18px;"),
  p("In summary, our analysis illuminates the intricate relationship of race, socioeconomic status, and academic performance. By recognizing the profound impact of economic disparities and systemic inequalities, we hope to highlight the urgency of transformative action. It is imperative that we prioritize policies and initiatives aimed at promoting economic equity, fostering greater access to educational opportunities, and dismantling barriers to success for all students, regardless of their background. By doing so, we can strive towards a more just and equitable education system that empowers every individual to fulfill their potential and contribute meaningfully to society no matter their cards dealt at birth.",
-   style = "font-size: 20px;")
+   style = "font-size: 18px;")
 )
 
 ## Overall UI Navbar
